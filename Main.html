@@ -1,0 +1,44 @@
+<html>
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+					$.ajax({
+		    type: "GET",
+		    url: "http://api.similarweb.com/Site/concordia.ca/v1/traffic?Format=JSON&UserKey=3d44b917561befd895ddde91b6b86b7d",
+		    contentType: "application/json",
+		    data: JSON.stringify({category: 42, sort: 3, type: "pdf"}),
+		    dataType: "json",
+		    success: function(json, status){
+		        
+		    	alert(JSON.stringify(json));
+		        if (status != "success") {
+		            console.log("Error loading data");
+		            return;
+		        }
+		        log("Data loaded!");
+		    },
+		    error: function(result, status, err) {
+		        console.log("Error loading data");
+		        return;
+		    }
+		});
+
+
+
+		});
+
+		
+
+	</script>
+
+
+
+</head>
+	
+<body>
+
+</body>
+
+
+</html>
